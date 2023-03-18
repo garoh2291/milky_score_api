@@ -14,6 +14,7 @@ async function start() {
   });
 
   app.listen(port, () => {
+    console.log("for herokus");
     console.log(`Server is running on port ${port}`);
   });
 }
