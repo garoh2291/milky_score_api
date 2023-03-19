@@ -30,7 +30,15 @@ const userSchema = new Schema({
     default: Date.now(),
   },
   SelectedEvents: {
-    items: [],
+    items: [
+      {
+        eventId: {
+          type: Schema.Types.ObjectId,
+          ref: "Express",
+          required: true,
+        },
+      },
+    ],
   },
 });
 

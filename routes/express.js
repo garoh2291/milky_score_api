@@ -9,7 +9,7 @@ const expressController = require("../controllers/expressController");
 router.post("/", validator("express-create"), expressController.create);
 
 //for user
-router.get("/daily", auth, sub, expressController.getBatch);
+router.get("/daily", expressController.getBatchActual);
 
 //for admin
 router.get("/:id", expressController.getSingle);
