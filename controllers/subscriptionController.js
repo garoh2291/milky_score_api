@@ -3,7 +3,6 @@ const stripe = require("stripe")(stripeSecret);
 
 class SubController {
   getAlctivePackages = async (req, res) => {
-    console.log(req.pId);
     const products = await stripe.products.list({ active: true });
 
     res.json({ products, pId: req.pId });
@@ -18,7 +17,6 @@ class SubController {
     const { product } = subscription.data[0].plan;
 
     const prodInfo = await stripe.products.retrieve(product);
-
 
     res.json({ subscription: subscription.data[0], prodInfo });
   };

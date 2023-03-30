@@ -32,6 +32,10 @@ const userSchema = new Schema({
   SelectedEvents: {
     items: [
       {
+        cf: {
+          type: Number,
+          required: true,
+        },
         eventId: {
           type: Schema.Types.ObjectId,
           ref: "Express",

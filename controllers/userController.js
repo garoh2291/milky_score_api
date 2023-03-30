@@ -92,7 +92,6 @@ class UserController {
     const subscriptions1 = await stripe.subscriptions.list({
       customer: pId,
     });
-    console.log(subscriptions1.data[0]);
 
     res.json({ subscription: true, current });
   };
