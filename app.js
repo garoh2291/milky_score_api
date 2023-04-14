@@ -29,5 +29,6 @@ app.use("/api/v1/events", eventRouter);
 app.use("/api/v1/sub", subRouter);
 app.use("/api/v1/checkout", checkoutRouter);
 app.use("/api/v1/express", expressRouter);
+app.use("/api/v1/news", require("./routes/news"));
 
 module.exports = app;
