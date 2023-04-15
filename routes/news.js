@@ -8,6 +8,9 @@ const newsController = require("../controllers/newsController");
 //get all news
 router.get("/", newsController.getBatch);
 
+//get single news
+router.get("/:id", newsController.getSingle);
+
 //create news
 router.post("/create-single/", newsValidator, newsController.create);
 

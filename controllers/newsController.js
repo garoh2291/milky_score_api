@@ -71,6 +71,18 @@ class NewsController {
       next(err);
     }
   };
+
+  getSingle = async (req, res, next) => {
+    try {
+      const news = await NewsSchema.findOne({
+        _id: req.params.id,
+      });
+      if (!news) throw errorConfig.newsNotFound;
+      res.json(news.toObject());
+    } catch (err) {
+      next(err);
+    }
+  };
 }
 
 module.exports = new NewsController();
