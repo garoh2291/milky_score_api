@@ -65,7 +65,7 @@ class NewsController {
 
   getBatch = async (req, res, next) => {
     try {
-      const news = await NewsSchema.find({}).sort({ createdAt: 1 });
+      const news = await NewsSchema.find({}).sort({ createdAt: -1 });
       res.json(news);
     } catch (err) {
       next(err);
